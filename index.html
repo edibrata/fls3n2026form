@@ -635,7 +635,7 @@
 
         function requestTokenWA() {
             const school = document.getElementById('tokenTargetSchool').innerText;
-            const message = `Mohon kode token revisi data pendaftaran FLS3N\n\n- Nama Lengkap:\n- Nama Sekolah: ${school}\n\nTerima Kasih.`;
+            const message = `Mohon kode token revisi data pendaftaran FLS3N ${school}\n\nTerima Kasih.`;
             const encoded = encodeURIComponent(message);
             window.open(`https://wa.me/${ADMIN_WA}?text=${encoded}`, '_blank');
         }
