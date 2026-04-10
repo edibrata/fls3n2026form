@@ -293,12 +293,14 @@
                                     </div>
 
                                     <div class="mt-2 text-right">
-                                        <button type="button" onclick="switchRevisionMode(true)" id="revLink" class="text-[10px] font-bold text-indigo-600 hover:text-indigo-800 transition-colors uppercase tracking-tight">Sudah pernah mengisi? Klik untuk revisi data Anda.</button>
+                                        <button type="button" onclick="switchTab('data')" class="text-[10px] font-bold text-indigo-600 hover:text-indigo-800 transition-colors uppercase tracking-tight">Ingin revisi? Masuk Panel Admin untuk mendapatkan Token.</button>
+                                        <br>
+                                        <button type="button" onclick="switchRevisionMode(true)" id="revLink" class="text-[10px] font-bold text-indigo-600 hover:text-indigo-800 transition-colors uppercase tracking-tight">Sudah punya Token? Klik untuk revisi data Anda.</button>
                                         <button type="button" onclick="switchRevisionMode(false)" id="cancelRevLink" class="hidden text-[10px] font-bold text-rose-600 hover:text-rose-800 transition-colors uppercase tracking-tight">Batal Revisi? Kembali ke mode pengisian baru.</button>
                                     </div>
 
                                     <div id="selectionHint" class="hidden mt-4 p-3 bg-indigo-50 border border-indigo-100 rounded text-[10px] text-indigo-700 font-bold leading-relaxed shadow-sm">
-                                        Hanya menampilkan sekolah yang sudah masuk di sistem karena pernah melakukan pendaftaran. Pilih nama sekolah Anda untuk memperbarui isian.
+                                        Pilih nama sekolah Anda untuk memperbarui isian. Diperlukan Kode Token yang tertera di bukti PDF atau Panel Admin.
                                     </div>
                                 </div>
                                 
@@ -947,8 +949,13 @@
                 }
             });
             const now = new Date();
-            const dateStr = `${now.getFullYear()}${String(now.getMonth()+1).padStart(2,'0')}${String(now.getDate()).padStart(2,'0')}`;
-            XLSX.writeFile(wb, `FLS3N_Sukaresmi_Undian_${dateStr}.xlsx`);
+            const YYYY = now.getFullYear();
+            const MM = String(now.getMonth() + 1).padStart(2, '0');
+            const DD = String(now.getDate()).padStart(2, '0');
+            const HH = String(now.getHours()).padStart(2, '0');
+            const SS = String(now.getSeconds()).padStart(2, '0');
+            const timestamp = `${YYYY}${MM}${DD} ${HH}.${SS}`;
+            XLSX.writeFile(wb, `Edi Brata Data Pendaftaran FLS3N ${timestamp}.xlsx`);
         }
 
         function switchTab(tabId) {
@@ -1117,8 +1124,8 @@
             doc.text(`Simpan Kode Token Revisi Anda: ${token}`, 105, finalY, { align: "center" });
             doc.text("Kode ini diperlukan jika Anda ingin mengubah data di kemudian hari.", 105, finalY + 5, { align: "center" });
             
-            const prefix = isRevision ? "Bukti Revisi Pendaftaran" : "Bukti Pendaftaran";
-            const fileName = `${prefix} FLS3N ${schoolName} ${timestamp}.pdf`;
+            const prefix = isRevision ? "Edi Brata Bukti Revisi Pendaftaran FLS3N" : "Edi Brata Bukti Pendaftaran FLS3N";
+            const fileName = `${prefix} ${schoolName} ${timestamp}.pdf`;
             
             doc.save(fileName);
         }
