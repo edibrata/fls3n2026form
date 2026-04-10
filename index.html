@@ -293,9 +293,7 @@
                                     </div>
 
                                     <div class="mt-2 text-right">
-                                        <button type="button" onclick="switchTab('data')" class="text-[10px] font-bold text-indigo-600 hover:text-indigo-800 transition-colors uppercase tracking-tight">Ingin revisi? Masuk Panel Admin untuk mendapatkan Token.</button>
-                                        <br>
-                                        <button type="button" onclick="switchRevisionMode(true)" id="revLink" class="text-[10px] font-bold text-indigo-600 hover:text-indigo-800 transition-colors uppercase tracking-tight">Sudah punya Token? Klik untuk revisi data Anda.</button>
+                                        <button type="button" onclick="switchRevisionMode(true)" id="revLink" class="text-[10px] font-bold text-indigo-600 hover:text-indigo-800 transition-colors uppercase tracking-tight">Sudah pernah mengisi? Klik untuk revisi data Anda.</button>
                                         <button type="button" onclick="switchRevisionMode(false)" id="cancelRevLink" class="hidden text-[10px] font-bold text-rose-600 hover:text-rose-800 transition-colors uppercase tracking-tight">Batal Revisi? Kembali ke mode pengisian baru.</button>
                                     </div>
 
@@ -456,8 +454,12 @@
         <div class="bg-white w-full max-w-sm rounded-lg shadow-2xl p-6 text-center transform transition-all">
             <div id="modalIcon" class="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-3xl"></div>
             <h3 id="modalTitle" class="text-lg font-black uppercase tracking-tight text-slate-900 mb-2 leading-none"></h3>
-            <p id="modalMessage" class="text-sm text-slate-500 font-medium mb-6 leading-relaxed"></p>
-            <button onclick="closeModal()" class="w-full py-3 bg-slate-900 text-white rounded font-bold text-xs uppercase tracking-widest hover:bg-black transition-all">Tutup</button>
+            <div id="modalMessageContainer" class="mb-6">
+                <p id="modalMessage" class="text-sm text-slate-500 font-medium leading-relaxed"></p>
+            </div>
+            <div id="modalActions" class="flex flex-col gap-2">
+                <button onclick="closeModal()" id="modalCloseBtn" class="w-full py-3 bg-slate-900 text-white rounded font-bold text-xs uppercase tracking-widest hover:bg-black transition-all">Tutup</button>
+            </div>
         </div>
     </div>
 
@@ -618,20 +620,28 @@
             const input = document.getElementById('inputRevisionToken').value.trim().toUpperCase();
             if (!input) return;
 
-            // Jika token di database kosong (legacy data), generate otomatis atau izinkan (opsional)
-            const correctToken = pendingRevisionData.revision_token || "SYSTEM-GEN"; 
+            // Ambil data terbaru dari submissions untuk memastikan token valid secara real-time
+            const latestData = window.submissions.find(s => s.id === pendingRevisionData.id);
+            const correctToken = latestData ? (latestData.revision_token || "SYSTEM-GEN") : (pendingRevisionData.revision_token || "SYSTEM-GEN");
 
             if (input === correctToken) {
                 editingDocId = pendingRevisionData.id;
-                tempFormData = {...pendingRevisionData};
+                tempFormData = {...latestData || pendingRevisionData};
                 const boxes = document.querySelectorAll('input[name="lomba_pilihan"]');
                 boxes.forEach(box => {
-                    box.checked = !!pendingRevisionData[`${box.value}_nama_1`];
+                    box.checked = !!(latestData || pendingRevisionData)[`${box.value}_nama_1`];
                 });
                 document.getElementById('tokenModal').classList.add('hidden');
                 showModal("AKSES DIBUKA", `Data ${pendingRevisionData.nama_sekolah} siap untuk direvisi.`, "success");
             } else {
-                showModal("TOKEN SALAH", "Kode token yang Anda masukkan tidak valid. Silakan minta kode kepada panitia.", "error");
+                const schoolName = pendingRevisionData.nama_sekolah;
+                const message = `Yth. Admin FLS3N,\n\nKode token pendaftaran ${schoolName} tidak bisa digunakan. Mohon kirimkan kode token terbaru.\n\nTerima kasih.`;
+                const waUrl = `https://wa.me/${ADMIN_WA}?text=${encodeURIComponent(message)}`;
+                
+                showModal("AKSES DITOLAK", "Token FLS3N tidak valid atau sudah kedaluwarsa karena direset oleh admin.", "error", {
+                    label: "Minta Token Baru (WA)",
+                    onClick: () => window.open(waUrl, '_blank')
+                });
             }
         }
 
@@ -786,10 +796,31 @@
         }
 
         window.sendTokenWA = function(phone, school, token) {
-            const cleanPhone = phone.replace(/[^0-9]/g, '');
+            const cleanPhone = (phone || "").replace(/[^0-9]/g, '');
             const finalPhone = cleanPhone.startsWith('0') ? '62' + cleanPhone.substring(1) : cleanPhone;
             const message = `Halo Bapak/Ibu Pembimbing FLS3N ${school},\n\nBerikut adalah KODE TOKEN REVISI untuk pendaftaran sekolah Anda:\n\n*${token}*\n\nSilakan gunakan kode tersebut di portal pendaftaran pada menu REVISI. Terima kasih.`;
             window.open(`https://wa.me/${finalPhone}?text=${encodeURIComponent(message)}`, '_blank');
+        }
+
+        window.resetRevisionToken = async function(id) {
+            if (!confirm("Generate ulang token revisi? Token lama tidak akan bisa digunakan lagi.")) return;
+            const newToken = generateToken();
+            try {
+                const entry = window.submissions.find(s => s.id === id);
+                await window.firestoreTools.updateDoc(window.firestoreTools.doc(window.db, 'artifacts', window.customAppId, 'public', 'data', 'pendaftar', id), {
+                    revision_token: newToken
+                });
+                
+                showModal("TOKEN DIRESET", `Token baru untuk ${entry.nama_sekolah} adalah: ${newToken}`, "success", {
+                    label: "Kirim ke Pembimbing (WA)",
+                    onClick: () => {
+                        // Cari nomor WA salah satu pembimbing
+                        let wa = "";
+                        Object.keys(LOMBA_MAP).forEach(k => { if (entry[`${k}_guru_wa`]) wa = entry[`${k}_guru_wa`]; });
+                        sendTokenWA(wa, entry.nama_sekolah, newToken);
+                    }
+                });
+            } catch (e) { showModal("ERROR", e.message, "error"); }
         }
 
         window.downloadPDFFromAdmin = function(id) {
@@ -855,7 +886,7 @@
             }
             tbody.innerHTML = rawRows.map((r, idx) => {
                 // Formatting phone for wa.me link
-                const cleanPhone = r.wa.replace(/[^0-9]/g, '');
+                const cleanPhone = (r.wa || "").replace(/[^0-9]/g, '');
                 const finalPhone = cleanPhone.startsWith('0') ? '62' + cleanPhone.substring(1) : cleanPhone;
                 
                 return `
@@ -889,6 +920,9 @@
                         <div class="flex items-center justify-center gap-1.5">
                             <button onclick="downloadPDFFromAdmin('${r.id}')" class="p-1.5 bg-emerald-50 text-emerald-600 rounded hover:bg-emerald-600 hover:text-white transition-all shadow-sm" title="Unduh PDF Bukti Pendaftaran">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" /></svg>
+                            </button>
+                            <button onclick="resetRevisionToken('${r.id}')" class="p-1.5 bg-amber-50 text-amber-600 rounded hover:bg-amber-600 hover:text-white transition-all shadow-sm" title="Reset Token Keamanan">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" /></svg>
                             </button>
                             <button onclick="editEntry('${r.id}')" class="p-1.5 bg-indigo-50 text-indigo-600 rounded hover:bg-indigo-600 hover:text-white transition-all shadow-sm">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" /></svg>
@@ -1148,13 +1182,33 @@
         }
         window.togglePasswordVisibility = function() { const i = document.getElementById('adminPass'); if (i) i.type = i.type === 'password' ? 'text' : 'password'; }
 
-        function showModal(title, msg, type) {
-            const m = document.getElementById('modal'), t = document.getElementById('modalTitle'), txt = document.getElementById('modalMessage'), ic = document.getElementById('modalIcon');
+        function showModal(title, msg, type, extraAction = null) {
+            const m = document.getElementById('modal'), 
+                  t = document.getElementById('modalTitle'), 
+                  txt = document.getElementById('modalMessage'), 
+                  ic = document.getElementById('modalIcon'),
+                  actions = document.getElementById('modalActions'),
+                  closeBtn = document.getElementById('modalCloseBtn');
+            
             t.innerText = title; txt.innerText = msg;
             ic.innerHTML = type === 'success' ? '✅' : '❌';
             ic.className = `w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-3xl ${type === 'success' ? 'bg-emerald-50 text-emerald-500' : 'bg-rose-50 text-rose-500'}`;
+            
+            // Bersihkan aksi sebelumnya kecuali tombol tutup
+            actions.innerHTML = "";
+            
+            if (extraAction) {
+                const btn = document.createElement("button");
+                btn.innerText = extraAction.label;
+                btn.className = "w-full py-3 bg-emerald-600 text-white rounded font-bold text-xs uppercase tracking-widest hover:bg-emerald-700 transition-all shadow-md";
+                btn.onclick = () => { extraAction.onClick(); closeModal(); };
+                actions.appendChild(btn);
+            }
+            
+            actions.appendChild(closeBtn);
             m.classList.remove('hidden');
         }
+
         function closeModal() { document.getElementById('modal').classList.add('hidden'); }
 
         function generateParticipantForms() {
