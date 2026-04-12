@@ -394,7 +394,6 @@
                                     <th class="px-4 py-4 sortable-header bg-slate-100" onclick="toggleAdminSort('timestamp_raw')">Waktu Daftar <span id="admin-icon-timestamp_raw" class="sort-icon"></span></th>
                                     <th class="px-4 py-4 sortable-header bg-slate-100" onclick="toggleAdminSort('nama_sekolah')">Sekolah <span id="admin-icon-nama_sekolah" class="sort-icon"></span></th>
                                     <th class="px-4 py-4 text-center sortable-header bg-slate-100 w-24" onclick="toggleAdminSort('no_undian')">No. Undian <span id="admin-icon-no_undian" class="sort-icon"></span></th>
-                                    <th class="px-4 py-4 text-center sortable-header bg-slate-100 w-32">Token Revisi</th>
                                     <th class="px-4 py-4 sortable-header bg-slate-100" onclick="toggleAdminSort('lomba_name')">Lomba <span id="admin-icon-lomba_name" class="sort-icon"></span></th>
                                     <th class="px-4 py-4 sortable-header bg-slate-100" onclick="toggleAdminSort('nama_peserta')">Nama Peserta <span id="admin-icon-nama_peserta" class="sort-icon"></span></th>
                                     <th class="px-4 py-4 sortable-header bg-slate-100" onclick="toggleAdminSort('nisn')">NISN <span id="admin-icon-nisn" class="sort-icon"></span></th>
@@ -403,6 +402,7 @@
                                     <th class="px-4 py-4 sortable-header bg-slate-100" onclick="toggleAdminSort('tgl')">Tgl Lahir <span id="admin-icon-tgl" class="sort-icon"></span></th>
                                     <th class="px-4 py-4 text-center sortable-header bg-slate-100" onclick="toggleAdminSort('kelas')">Kelas <span id="admin-icon-kelas" class="sort-icon"></span></th>
                                     <th class="px-4 py-4 sortable-header bg-slate-100" onclick="toggleAdminSort('guru')">Pembimbing <span id="admin-icon-guru" class="sort-icon"></span></th>
+                                    <th class="px-4 py-4 text-center sortable-header bg-slate-100 w-32">Token Revisi</th>
                                     <th class="px-4 py-4 text-center w-28 bg-slate-100">Aksi</th>
                                 </tr>
                             </thead>
@@ -453,7 +453,7 @@
     <div id="modal" class="fixed inset-0 z-[120] flex items-center justify-center p-4 bg-slate-900/60 hidden backdrop-blur-sm">
         <div class="bg-white w-full max-w-sm rounded-lg shadow-2xl p-6 text-center transform transition-all">
             <div id="modalIcon" class="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-3xl"></div>
-            <h3 id="modalTitle" class="text-lg font-black tracking-tight text-slate-900 mb-2 leading-none"></h3>
+            <h3 id="modalTitle" class="text-lg font-black uppercase tracking-tight text-slate-900 mb-2 leading-none"></h3>
             <div id="modalMessageContainer" class="mb-6">
                 <p id="modalMessage" class="text-sm text-slate-500 font-medium leading-relaxed whitespace-pre-line"></p>
             </div>
@@ -897,13 +897,6 @@
                     <td class="px-4 py-3 font-mono text-indigo-600 font-bold whitespace-nowrap uppercase">${r.waktu_daftar}</td>
                     <td class="px-4 py-3 font-bold truncate max-w-[150px] uppercase">${r.nama_sekolah}</td>
                     <td class="px-4 py-3 text-center uppercase"><span class="bg-amber-100 text-amber-700 px-2 py-0.5 rounded font-black text-[10px] uppercase">${r.no_undian}</span></td>
-                    <td class="px-4 py-3 text-center uppercase">
-                        <div class="flex items-center justify-center gap-2 uppercase">
-                            <span class="font-black text-slate-900 bg-slate-100 px-2 py-1 rounded border border-slate-200 uppercase">${r.revision_token}</span>
-                            <button onclick="copyToken('${r.revision_token}')" class="p-1.5 bg-slate-200 rounded hover:bg-slate-300 transition-all uppercase" title="SALIN TOKEN">📋</button>
-                            <button onclick="sendTokenWA('${r.wa}', '${r.nama_sekolah}', '${r.revision_token}')" class="p-1.5 bg-emerald-500 text-white rounded hover:bg-emerald-600 transition-all uppercase" title="KIRIM WA TOKEN">💬</button>
-                        </div>
-                    </td>
                     <td class="px-4 py-3 uppercase"><span class="bg-indigo-50 text-indigo-700 px-2 py-0.5 rounded text-[9px] font-black border border-indigo-100 uppercase">${r.lomba_name}</span></td>
                     <td class="px-4 py-3 font-black text-slate-900 uppercase uppercase">${r.nama_peserta}</td>
                     <td class="px-4 py-3 font-mono text-slate-500 font-bold uppercase">${r.nisn}</td>
@@ -916,6 +909,13 @@
                         <div class="text-indigo-500 font-bold text-[9px] flex items-center gap-1">
                             <svg class="w-2.5 h-2.5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
                             ${r.wa}
+                        </div>
+                    </td>
+                    <td class="px-4 py-3 text-center uppercase">
+                        <div class="flex items-center justify-center gap-2 uppercase">
+                            <span class="font-black text-slate-900 bg-slate-100 px-2 py-1 rounded border border-slate-200 uppercase">${r.revision_token}</span>
+                            <button onclick="copyToken('${r.revision_token}')" class="p-1.5 bg-slate-200 rounded hover:bg-slate-300 transition-all uppercase" title="SALIN TOKEN">📋</button>
+                            <button onclick="sendTokenWA('${r.wa}', '${r.nama_sekolah}', '${r.revision_token}')" class="p-1.5 bg-emerald-500 text-white rounded hover:bg-emerald-600 transition-all uppercase" title="KIRIM WA TOKEN">💬</button>
                         </div>
                     </td>
                     <td class="px-4 py-3 text-center uppercase">
