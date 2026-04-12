@@ -137,7 +137,7 @@
                     <img src="https://raw.githubusercontent.com/edibrata/image/main/Logo%20FLS3N%202026-2.jpg" alt="Logo FLS3N" class="h-8 md:h-10 w-auto rounded-sm">
                     <div class="flex flex-col">
                         <span class="font-bold text-base md:text-lg tracking-tight text-slate-900 leading-none">FLS3N <span class="text-indigo-600 uppercase">Sukaresmi</span></span>
-                        <span class="text-[7px] md:text-[8px] font-black text-slate-400 uppercase tracking-widest mt-0.5 leading-none">Developed By Edi Brata</span>
+                        <span class="text-[7px] md:text-[8px] font-black text-slate-400 uppercase tracking-widest mt-0.5 leading-none">DEVELOPED BY EDI BRATA</span>
                     </div>
                 </div>
                 <!-- Navigation icons -->
@@ -270,8 +270,8 @@
                             <div class="space-y-6">
                                 <div class="relative">
                                     <label class="block text-[11px] font-bold mb-2 text-slate-600 uppercase tracking-widest" id="dropdownLabel">Pilih Nama Sekolah</label>
-                                    <select name="nama_sekolah" id="main_sekolah" required onchange="handleSchoolSelection(this.value)" class="w-full px-4 py-3 rounded border border-slate-300 outline-none focus:border-indigo-500 bg-slate-50 text-sm font-semibold appearance-none transition-all">
-                                        <option value="">-- Pilih Sekolah --</option>
+                                    <select name="nama_sekolah" id="main_sekolah" required onchange="handleSchoolSelection(this.value)" class="w-full px-4 py-3 rounded border border-slate-300 outline-none focus:border-indigo-500 bg-slate-50 text-sm font-semibold appearance-none transition-all uppercase">
+                                        <option value="">-- PILIH SEKOLAH --</option>
                                     </select>
                                     
                                     <!-- Kartu Konfirmasi Undian -->
@@ -282,7 +282,7 @@
                                                 <div class="text-[9px] font-black text-emerald-700 uppercase tracking-[0.2em] mb-1 flex items-center gap-1">
                                                     <span class="text-lg leading-none">📢</span> Informasi Urutan Tampil
                                                 </div>
-                                                <p class="text-[11px] text-slate-600 leading-relaxed">
+                                                <p class="text-[11px] text-slate-600 leading-relaxed uppercase">
                                                     Telah dilakukan undian nomor peserta pada forum rapat kepala sekolah pada Senin, 6 April 2026. Berdasarkan hasil undian, <span class="font-black text-slate-900" id="lotterySchoolName">...</span> untuk FLS3N mendapatkan nomor undian:
                                                 </p>
                                             </div>
@@ -323,11 +323,11 @@
                 <div class="bg-white p-10 rounded-2xl border border-slate-200 shadow-xl space-y-6 text-slate-800">
                     <div class="w-20 h-20 bg-rose-50 text-rose-500 rounded-full flex items-center justify-center mx-auto text-4xl shadow-sm border border-rose-100">🕒</div>
                     
-                    <p class="text-slate-700 font-medium text-sm leading-relaxed">Batas akhir pendaftaran hingga 16 April 2026 pukul 20.00 WIB.</p>
+                    <p class="text-slate-700 font-medium text-sm leading-relaxed uppercase">Batas akhir pendaftaran hingga 16 April 2026 pukul 20.00 WIB.</p>
                     
                     <h2 class="text-2xl md:text-3xl font-black text-slate-900 uppercase tracking-tight">Pendaftaran Telah Ditutup</h2>
                     
-                    <p class="text-slate-500 text-sm leading-relaxed font-medium">Mohon maaf, masa pendaftaran delegasi FLS3N Sukaresmi 2026 telah berakhir sesuai jadwal yang ditentukan. Hubungi panitia pelaksana untuk informasi lebih lanjut.</p>
+                    <p class="text-slate-500 text-sm leading-relaxed font-medium uppercase">Mohon maaf, masa pendaftaran delegasi FLS3N Sukaresmi 2026 telah berakhir sesuai jadwal yang ditentukan. Hubungi panitia pelaksana untuk informasi lebih lanjut.</p>
                     
                     <button onclick="switchTab('beranda')" class="inline-block bg-slate-900 text-white px-8 py-3 rounded font-bold text-xs uppercase tracking-widest shadow-lg hover:bg-black active:scale-95 transition-all">Kembali ke Beranda</button>
                 </div>
@@ -422,7 +422,7 @@
                 <span class="text-[10px] md:text-[11px] font-black text-slate-400 uppercase tracking-[0.2em]">FLS3N Sukaresmi 2026</span>
             </div>
             <div class="text-[11px] md:text-[12px] font-black text-indigo-400 uppercase tracking-[0.2em] hover:text-indigo-600 transition-colors cursor-default">
-                Developed by Edi Brata
+                DEVELOPED BY EDI BRATA
             </div>
         </div>
     </footer>
@@ -433,7 +433,7 @@
             <div class="p-6 text-center">
                 <div class="w-16 h-16 bg-indigo-50 text-indigo-600 rounded-full flex items-center justify-center mx-auto mb-4 text-3xl">🔑</div>
                 <h3 class="text-lg font-black uppercase tracking-tight text-slate-900 mb-2">Verifikasi Akses Revisi</h3>
-                <p id="tokenModalDesc" class="text-[11px] text-slate-500 font-medium mb-6 leading-relaxed">
+                <p id="tokenModalDesc" class="text-[11px] text-slate-500 font-medium mb-6 leading-relaxed uppercase">
                     Untuk mengubah data <span id="tokenTargetSchool" class="font-bold text-slate-800"></span>, silakan masukkan kode token unik sekolah Anda.
                 </p>
                 <input type="text" id="inputRevisionToken" class="w-full px-4 py-3 rounded border border-slate-300 outline-none focus:border-indigo-500 text-center font-black tracking-[0.5em] text-lg uppercase mb-4" placeholder="------">
@@ -453,9 +453,9 @@
     <div id="modal" class="fixed inset-0 z-[120] flex items-center justify-center p-4 bg-slate-900/60 hidden backdrop-blur-sm">
         <div class="bg-white w-full max-w-sm rounded-lg shadow-2xl p-6 text-center transform transition-all">
             <div id="modalIcon" class="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-3xl"></div>
-            <h3 id="modalTitle" class="text-lg font-black uppercase tracking-tight text-slate-900 mb-2 leading-none"></h3>
+            <h3 id="modalTitle" class="text-lg font-black tracking-tight text-slate-900 mb-2 leading-none"></h3>
             <div id="modalMessageContainer" class="mb-6">
-                <p id="modalMessage" class="text-sm text-slate-500 font-medium leading-relaxed"></p>
+                <p id="modalMessage" class="text-sm text-slate-500 font-medium leading-relaxed whitespace-pre-line"></p>
             </div>
             <div id="modalActions" class="flex flex-col gap-2">
                 <button onclick="closeModal()" id="modalCloseBtn" class="w-full py-3 bg-slate-900 text-white rounded font-bold text-xs uppercase tracking-widest hover:bg-black transition-all">Tutup</button>
@@ -512,7 +512,7 @@
         function initUI() {
             document.getElementById('statsGrid').innerHTML = Object.entries(LOMBA_MAP).map(([id, info]) => `
                 <div class="bg-white p-3 rounded border border-slate-200 shadow-sm flex flex-col hover:border-indigo-200 transition-all">
-                    <span class="text-[9px] font-black text-slate-400 uppercase leading-none mb-2 text-center">${info.name}</span>
+                    <span class="text-[9px] font-black text-slate-400 uppercase leading-none mb-2 text-center uppercase">${info.name}</span>
                     <div class="flex flex-col gap-1 text-slate-700">
                         <div class="flex justify-between border-b border-slate-200 pb-0.5"><span class="text-[8px] font-bold text-slate-400 uppercase">Sekolah</span><span class="text-[12px] font-black text-slate-900" id="stat-school-${id}">0</span></div>
                         <div class="flex justify-between border-b border-slate-200 pb-0.5"><span class="text-[8px] font-bold text-indigo-400 uppercase">Peserta</span><span class="text-[12px] font-black text-indigo-600" id="stat-student-${id}">0</span></div>
@@ -585,16 +585,16 @@
             const schoolLabel = document.getElementById('lotterySchoolName');
             const numLabel = document.getElementById('lotteryNumberDisplay');
             
-            if (val && MAP_UNDIAN[val]) {
-                schoolLabel.innerText = val;
-                numLabel.innerText = MAP_UNDIAN[val];
+            if (val && MAP_UNDIAN[val.toUpperCase()]) {
+                schoolLabel.innerText = val.toUpperCase();
+                numLabel.innerText = MAP_UNDIAN[val.toUpperCase()];
                 card.classList.remove('hidden');
             } else {
                 card.classList.add('hidden');
             }
 
             if (isRevisionMode && val) {
-                const match = window.submissions.find(s => s.nama_sekolah === val);
+                const match = window.submissions.find(s => s.nama_sekolah.toUpperCase() === val.toUpperCase());
                 if (match) {
                     pendingRevisionData = match;
                     openTokenModal(val);
@@ -604,7 +604,7 @@
 
         // Token Modal Logic
         function openTokenModal(schoolName) {
-            document.getElementById('tokenTargetSchool').innerText = schoolName;
+            document.getElementById('tokenTargetSchool').innerText = schoolName.toUpperCase();
             document.getElementById('inputRevisionToken').value = '';
             document.getElementById('tokenModal').classList.remove('hidden');
         }
@@ -632,14 +632,14 @@
                     box.checked = !!(latestData || pendingRevisionData)[`${box.value}_nama_1`];
                 });
                 document.getElementById('tokenModal').classList.add('hidden');
-                showModal("AKSES DIBUKA", `Data ${pendingRevisionData.nama_sekolah} siap untuk direvisi.`, "success");
+                showModal("AKSES DIBUKA", `Data ${pendingRevisionData.nama_sekolah.toUpperCase()} SIAP UNTUK DIREVISI.`, "success");
             } else {
-                const schoolName = pendingRevisionData.nama_sekolah;
-                const message = `Yth. Admin FLS3N,\n\nKode token pendaftaran ${schoolName} tidak bisa digunakan. Mohon kirimkan kode token terbaru.\n\nTerima kasih.`;
+                const schoolName = pendingRevisionData.nama_sekolah.toUpperCase();
+                const message = `Yth.\nAdmin FLS3N,\n\n_Assalamualaikum, Wr. Wb._\n\nKode Token pendaftaran *${schoolName}* tidak bisa digunakan. Mohon kirimkan Kode Token terbaru.\n\nTerima kasih.\n\n_Wassalamualaikum, Wr. Wb._`;
                 const waUrl = `https://wa.me/${ADMIN_WA}?text=${encodeURIComponent(message)}`;
                 
-                showModal("AKSES DITOLAK", "Token FLS3N tidak valid atau sudah kedaluwarsa karena direset oleh admin.", "error", {
-                    label: "Minta Token Baru (WA)",
+                showModal("AKSES DITOLAK", "TOKEN FLS3N TIDAK VALID ATAU SUDAH KEDALUWARSA KARENA DIRESET OLEH ADMIN.", "error", {
+                    label: "MINTA TOKEN BARU (WA)",
                     onClick: () => window.open(waUrl, '_blank')
                 });
             }
@@ -647,7 +647,7 @@
 
         function requestTokenWA() {
             const school = document.getElementById('tokenTargetSchool').innerText;
-            const message = `Mohon dikirim kode token revisi data pendaftaran FLS3N ${school}\n\nTerima Kasih.`;
+            const message = `Yth.\nAdmin FLS3N,\n\n_Assalamualaikum, Wr. Wb._\n\nMohon dikirim Kode Token Revisi Data Pendaftaran *${school}*.\n\nTerima kasih.\n\n_Wassalamualaikum, Wr. Wb._`;
             const encoded = encodeURIComponent(message);
             window.open(`https://wa.me/${ADMIN_WA}?text=${encoded}`, '_blank');
         }
@@ -660,7 +660,7 @@
             const link = document.getElementById('revLink');
             const cancel = document.getElementById('cancelRevLink');
             const dropdown = document.getElementById('main_sekolah');
-            if (label) label.innerText = isRevisionMode ? "Pilih Nama Sekolah (Mode Revisi)" : "Pilih Nama Sekolah";
+            if (label) label.innerText = isRevisionMode ? "PILIH NAMA SEKOLAH (MODE REVISI)" : "PILIH NAMA SEKOLAH";
             if (hint) hint.classList.toggle('hidden', !isRevisionMode);
             if (link) link.classList.toggle('hidden', isRevisionMode);
             if (cancel) cancel.classList.toggle('hidden', !isRevisionMode);
@@ -674,15 +674,15 @@
         window.updateSchoolDropdown = function() {
             const dropdown = document.getElementById('main_sekolah');
             if (!dropdown) return;
-            const registered = new Set(window.submissions.map(s => s.nama_sekolah));
+            const registered = new Set(window.submissions.map(s => s.nama_sekolah.toUpperCase()));
             const currentVal = dropdown.value;
-            dropdown.innerHTML = '<option value="">-- Pilih Sekolah --</option>';
+            dropdown.innerHTML = '<option value="">-- PILIH SEKOLAH --</option>';
             FULL_SCHOOL_LIST.forEach(school => {
-                const isReg = registered.has(school);
+                const isReg = registered.has(school.toUpperCase());
                 if (isRevisionMode) {
-                    if (isReg) { const o = document.createElement('option'); o.value = school; o.text = school; dropdown.add(o); }
+                    if (isReg) { const o = document.createElement('option'); o.value = school; o.text = school.toUpperCase(); dropdown.add(o); }
                 } else {
-                    if (!isReg) { const o = document.createElement('option'); o.value = school; o.text = school; dropdown.add(o); }
+                    if (!isReg) { const o = document.createElement('option'); o.value = school; o.text = school.toUpperCase(); dropdown.add(o); }
                 }
             });
             if (currentVal) dropdown.value = currentVal;
@@ -696,13 +696,13 @@
             let totalStudents = 0;
 
             window.submissions.forEach(sub => {
-                const schoolName = sub.nama_sekolah;
+                const schoolName = (sub.nama_sekolah || "").toUpperCase();
                 const parts = (sub.waktu_simpan || "").split(/[/, .:]+/).filter(x => x);
                 const rawTime = parts.length >= 5 ? new Date(parts[2], parts[1] - 1, parts[0], parts[3], parts[4], parts[5] || 0).getTime() : 0;
                 const formattedTime = parts.length >= 5 ? `${parts[2]}/${parts[1].padStart(2,'0')}/${parts[0].padStart(2,'0')} ${parts[3].padStart(2,'0')}.${parts[4].padStart(2,'0')}` : "-";
 
-                if (schoolName) {
-                    globalSchools.add(schoolName);
+                if (sub.nama_sekolah) {
+                    globalSchools.add(sub.nama_sekolah.toUpperCase());
                     if (!schoolDataMap[schoolName] || rawTime > schoolDataMap[schoolName].timestamp_raw) {
                         schoolDataMap[schoolName] = { name: schoolName, cabangSet: new Set(), studentCount: 0, timestamp_raw: rawTime, timestamp_formatted: formattedTime };
                     }
@@ -714,11 +714,11 @@
                         if (sub[`${key}_nama_${i}`]) branchCount++;
                     }
                     if (branchCount > 0) {
-                        if (schoolName) stats[key].school.add(schoolName);
+                        if (sub.nama_sekolah) stats[key].school.add(sub.nama_sekolah.toUpperCase());
                         stats[key].student += branchCount; 
                         totalStudents += branchCount;
                         if (sub[`${key}_guru_wa`]) { stats[key].mentors.add(sub[`${key}_guru_wa`]); globalMentors.add(sub[`${key}_guru_wa`]); }
-                        if (schoolName) { schoolDataMap[schoolName].cabangSet.add(key); schoolDataMap[schoolName].studentCount += branchCount; }
+                        if (sub.nama_sekolah) { schoolDataMap[schoolName].cabangSet.add(key); schoolDataMap[schoolName].studentCount += branchCount; }
                     }
                 });
             });
@@ -742,11 +742,11 @@
                 schoolList.sort((a, b) => schoolSortDir === 'asc' ? (a[schoolSortKey] > b[schoolSortKey] ? 1 : -1) : (a[schoolSortKey] < b[schoolSortKey] ? 1 : -1));
                 schoolTbody.innerHTML = schoolList.map((s, idx) => `
                     <tr class="hover:bg-indigo-50/20 transition-colors border-b border-slate-50 text-slate-700">
-                        <td class="px-4 py-4 text-center text-slate-400 font-bold">${idx + 1}</td>
-                        <td class="px-4 py-4 text-center text-indigo-600 font-bold text-[10px] w-32 leading-tight">${s.timestamp_formatted}</td>
-                        <td class="px-4 py-4 font-bold uppercase truncate max-w-xs">${s.name}</td>
-                        <td class="px-4 py-4 text-center w-24"><span class="bg-indigo-50 text-indigo-700 px-2 py-0.5 rounded text-[9px] font-black uppercase border border-indigo-100">${s.cabangCount} Lomba</span></td>
-                        <td class="px-4 py-4 text-center font-black text-slate-900 text-xs w-24">${s.studentCount}</td>
+                        <td class="px-4 py-4 text-center text-slate-400 font-bold uppercase">${idx + 1}</td>
+                        <td class="px-4 py-4 text-center text-indigo-600 font-bold text-[10px] w-32 leading-tight uppercase">${s.timestamp_formatted}</td>
+                        <td class="px-4 py-4 font-bold truncate max-w-xs uppercase">${s.name}</td>
+                        <td class="px-4 py-4 text-center w-24"><span class="bg-indigo-50 text-indigo-700 px-2 py-0.5 rounded text-[9px] font-black border border-indigo-100 uppercase">${s.cabangCount} LOMBA</span></td>
+                        <td class="px-4 py-4 text-center font-black text-slate-900 text-xs w-24 uppercase">${s.studentCount}</td>
                     </tr>
                 `).join('');
             }
@@ -765,10 +765,10 @@
         }
 
         window.deleteEntry = async function(id) {
-            if (!confirm("Hapus pendaftaran ini secara permanen dari database?")) return;
+            if (!confirm("HAPUS PENDAFTARAN INI SECARA PERMANEN DARI DATABASE?")) return;
             try {
                 await window.firestoreTools.deleteDoc(window.firestoreTools.doc(window.db, 'artifacts', window.customAppId, 'public', 'data', 'pendaftar', id));
-                showModal("BERHASIL", "Data telah dihapus.", "success");
+                showModal("BERHASIL", "DATA TELAH DIHAPUS.", "success");
             } catch (e) { showModal("ERROR", e.message, "error"); }
         }
 
@@ -781,7 +781,7 @@
             delete tempFormData.waktu_simpan;
             switchRevisionMode(true, entry.nama_sekolah);
             switchTab('formulir');
-            showModal("MODE EDIT", `Data ${entry.nama_sekolah} dimuat. Silakan ubah dan simpan.`, "success");
+            showModal("MODE EDIT", `DATA ${(entry.nama_sekolah || "").toUpperCase()} DIMUAT. SILAKAN UBAH DAN SIMPAN.`, "success");
         }
 
         // Admin Helpers
@@ -792,13 +792,20 @@
             dummy.select();
             document.execCommand("copy");
             document.body.removeChild(dummy);
-            showModal("BERHASIL", "Token disalin ke clipboard.", "success");
+            showModal("BERHASIL", "TOKEN DISALIN KE CLIPBOARD.", "success");
         }
 
         window.sendTokenWA = function(phone, school, token) {
             const cleanPhone = (phone || "").replace(/[^0-9]/g, '');
             const finalPhone = cleanPhone.startsWith('0') ? '62' + cleanPhone.substring(1) : cleanPhone;
-            const message = `Halo Bapak/Ibu Pembimbing FLS3N ${school},\n\nBerikut adalah KODE TOKEN REVISI untuk pendaftaran sekolah Anda:\n\n*${token}*\n\nSilakan gunakan kode tersebut di portal pendaftaran pada menu REVISI. Terima kasih.`;
+            const message = `Yth.\nBapak/Ibu Pembimbing FLS3N *${(school || "").toUpperCase()}*,\n\nBerikut adalah kode token revisi untuk pendaftaran sekolah Anda:\n\n*${token}*\n\nSilakan gunakan kode tersebut di menu revisi pada portal pendaftaran.\n\nTerima kasih.\n\n-------\n*Admin FLS3N*\n-------`;
+            window.open(`https://wa.me/${finalPhone}?text=${encodeURIComponent(message)}`, '_blank');
+        }
+
+        window.contactMentorWA = function(phone, school) {
+            const cleanPhone = (phone || "").replace(/[^0-9]/g, '');
+            const finalPhone = cleanPhone.startsWith('0') ? '62' + cleanPhone.substring(1) : cleanPhone;
+            const message = `Yth.\nBapak/Ibu Pembimbing FLS3N *${(school || "").toUpperCase()}*,\n\nKami sampaikan bahwa ...\n\nTerima kasih.\n\n-------\n*Admin FLS3N*\n-------`;
             window.open(`https://wa.me/${finalPhone}?text=${encodeURIComponent(message)}`, '_blank');
         }
 
@@ -811,10 +818,9 @@
                     revision_token: newToken
                 });
                 
-                showModal("TOKEN DIRESET", `Token baru untuk ${entry.nama_sekolah} adalah: ${newToken}`, "success", {
+                showModal("Token Direset", "Token baru untuk " + (entry.nama_sekolah || "") + ":\n" + newToken, "success", {
                     label: "Kirim ke Pembimbing (WA)",
                     onClick: () => {
-                        // Cari nomor WA salah satu pembimbing
                         let wa = "";
                         Object.keys(LOMBA_MAP).forEach(k => { if (entry[`${k}_guru_wa`]) wa = entry[`${k}_guru_wa`]; });
                         sendTokenWA(wa, entry.nama_sekolah, newToken);
@@ -836,7 +842,8 @@
             const searchVal = document.getElementById('adminSearch').value.toLowerCase().trim();
             let rawRows = [];
             window.submissions.forEach(sub => {
-                const undian = MAP_UNDIAN[sub.nama_sekolah] || 0;
+                const schoolNameRaw = (sub.nama_sekolah || "").toUpperCase();
+                const undian = MAP_UNDIAN[schoolNameRaw] || 0;
                 const revisionToken = sub.revision_token || "SYSTEM-GEN";
                 Object.keys(LOMBA_MAP).forEach(key => {
                     if (sub[`${key}_nama_1`]) {
@@ -844,21 +851,20 @@
                         for(let i=1; i<=LOMBA_MAP[key].count; i++) {
                             const name = sub[`${key}_nama_${i}`] || "";
                             if (!name && i > 1) continue;
-                            const sekolah = sub.nama_sekolah || "";
                             const nisn = sub[`${key}_nisn_${i}`] || "";
                             const guru = sub[`${key}_guru_nama`] || "";
                             const wa = sub[`${key}_guru_wa`] || "";
                             const tempat = sub[`${key}_tempat_${i}`] || "";
                             const lomba = LOMBA_MAP[key].name;
                             if (searchVal) {
-                                const searchableContent = [sekolah, lomba, name, nisn, guru, wa, tempat].join(' ').toLowerCase();
+                                const searchableContent = [schoolNameRaw, lomba, name, nisn, guru, wa, tempat].join(' ').toLowerCase();
                                 if (!searchableContent.includes(searchVal)) continue;
                             }
                             const parts = (sub.waktu_simpan || "").split(/[/, .:]+/).filter(x => x);
                             const rawTime = parts.length >= 5 ? new Date(parts[2], parts[1] - 1, parts[0], parts[3], parts[4], parts[5] || 0).getTime() : 0;
                             const formattedTime = parts.length >= 5 ? `${parts[2]}/${parts[1].padStart(2,'0')}/${parts[0].padStart(2,'0')} ${parts[3].padStart(2,'0')}.${parts[4].padStart(2,'0')}` : "-";
                             rawRows.push({
-                                id: sub.id, timestamp_raw: rawTime, waktu_daftar: formattedTime, nama_sekolah: sekolah, no_undian: undian, revision_token: revisionToken, lomba_id: key, lomba_name: lomba, nama_peserta: name, nisn: nisn, jk: sub[`${key}_jk_${i}`] || "-", tempat: tempat, tgl: sub[`${key}_tgl_${i}`] || "-", kelas: sub[`${key}_kelas_${i}`] || "-", guru: guru, wa: wa
+                                id: sub.id, timestamp_raw: rawTime, waktu_daftar: formattedTime, nama_sekolah: schoolNameRaw, no_undian: undian, revision_token: revisionToken, lomba_id: key, lomba_name: lomba, nama_peserta: name.toUpperCase(), nisn: nisn, jk: sub[`${key}_jk_${i}`] || "-", tempat: tempat.toUpperCase(), tgl: sub[`${key}_tgl_${i}`] || "-", kelas: sub[`${key}_kelas_${i}`] || "-", guru: guru.toUpperCase(), wa: wa
                             });
                         }
                     }
@@ -881,53 +887,49 @@
             if (activeIcon) activeIcon.innerHTML = adminSortDir === 'asc' ? '▴' : '▾';
 
             if (rawRows.length === 0) {
-                tbody.innerHTML = '<tr><td colspan="14" class="p-12 text-center font-bold text-slate-400 uppercase text-xs">Pencarian tidak ditemukan.</td></tr>';
+                tbody.innerHTML = '<tr><td colspan="14" class="p-12 text-center font-bold text-slate-400 uppercase text-xs uppercase">PENCARIAN TIDAK DITEMUKAN.</td></tr>';
                 return;
             }
             tbody.innerHTML = rawRows.map((r, idx) => {
-                // Formatting phone for wa.me link
-                const cleanPhone = (r.wa || "").replace(/[^0-9]/g, '');
-                const finalPhone = cleanPhone.startsWith('0') ? '62' + cleanPhone.substring(1) : cleanPhone;
-                
                 return `
                 <tr class="hover:bg-indigo-50/30 transition-colors border-b border-slate-50 text-[11px] text-slate-700">
-                    <td class="px-4 py-3 text-center text-slate-400 font-bold">${idx + 1}</td>
-                    <td class="px-4 py-3 font-mono text-indigo-600 font-bold whitespace-nowrap">${r.waktu_daftar}</td>
-                    <td class="px-4 py-3 font-bold uppercase truncate max-w-[150px]">${r.nama_sekolah}</td>
-                    <td class="px-4 py-3 text-center"><span class="bg-amber-100 text-amber-700 px-2 py-0.5 rounded font-black text-[10px]">${r.no_undian}</span></td>
-                    <td class="px-4 py-3 text-center">
-                        <div class="flex items-center justify-center gap-2">
-                            <span class="font-black text-slate-900 bg-slate-100 px-2 py-1 rounded border border-slate-200">${r.revision_token}</span>
-                            <button onclick="copyToken('${r.revision_token}')" class="p-1.5 bg-slate-200 rounded hover:bg-slate-300 transition-all" title="Salin Token">📋</button>
-                            <button onclick="sendTokenWA('${r.wa}', '${r.nama_sekolah}', '${r.revision_token}')" class="p-1.5 bg-emerald-500 text-white rounded hover:bg-emerald-600 transition-all" title="Kirim WA">💬</button>
+                    <td class="px-4 py-3 text-center text-slate-400 font-bold uppercase">${idx + 1}</td>
+                    <td class="px-4 py-3 font-mono text-indigo-600 font-bold whitespace-nowrap uppercase">${r.waktu_daftar}</td>
+                    <td class="px-4 py-3 font-bold truncate max-w-[150px] uppercase">${r.nama_sekolah}</td>
+                    <td class="px-4 py-3 text-center uppercase"><span class="bg-amber-100 text-amber-700 px-2 py-0.5 rounded font-black text-[10px] uppercase">${r.no_undian}</span></td>
+                    <td class="px-4 py-3 text-center uppercase">
+                        <div class="flex items-center justify-center gap-2 uppercase">
+                            <span class="font-black text-slate-900 bg-slate-100 px-2 py-1 rounded border border-slate-200 uppercase">${r.revision_token}</span>
+                            <button onclick="copyToken('${r.revision_token}')" class="p-1.5 bg-slate-200 rounded hover:bg-slate-300 transition-all uppercase" title="SALIN TOKEN">📋</button>
+                            <button onclick="sendTokenWA('${r.wa}', '${r.nama_sekolah}', '${r.revision_token}')" class="p-1.5 bg-emerald-500 text-white rounded hover:bg-emerald-600 transition-all uppercase" title="KIRIM WA TOKEN">💬</button>
                         </div>
                     </td>
-                    <td class="px-4 py-3"><span class="bg-indigo-50 text-indigo-700 px-2 py-0.5 rounded text-[9px] font-black border border-indigo-100 uppercase">${r.lomba_name}</span></td>
-                    <td class="px-4 py-3 font-black uppercase text-slate-900">${r.nama_peserta}</td>
-                    <td class="px-4 py-3 font-mono text-slate-500 font-bold">${r.nisn}</td>
-                    <td class="px-4 py-3 text-center">${r.jk === 'Laki-Laki' ? 'L' : 'P'}</td>
-                    <td class="px-4 py-3 uppercase text-[10px]">${r.tempat}</td>
-                    <td class="px-4 py-3 text-[10px] font-bold text-slate-800">${r.tgl}</td>
-                    <td class="px-4 py-3 text-center font-black">${r.kelas}</td>
-                    <td class="px-4 py-3">
-                        <div class="font-bold text-[10px] uppercase truncate max-w-[120px]" title="${r.guru}">${r.guru}</div>
-                        <a href="https://wa.me/${finalPhone}" target="_blank" class="text-indigo-500 hover:text-indigo-700 text-[9px] font-black flex items-center gap-1 transition-colors">
+                    <td class="px-4 py-3 uppercase"><span class="bg-indigo-50 text-indigo-700 px-2 py-0.5 rounded text-[9px] font-black border border-indigo-100 uppercase">${r.lomba_name}</span></td>
+                    <td class="px-4 py-3 font-black text-slate-900 uppercase uppercase">${r.nama_peserta}</td>
+                    <td class="px-4 py-3 font-mono text-slate-500 font-bold uppercase">${r.nisn}</td>
+                    <td class="px-4 py-3 text-center uppercase">${r.jk === 'Laki-Laki' ? 'L' : 'P'}</td>
+                    <td class="px-4 py-3 uppercase uppercase">${r.tempat}</td>
+                    <td class="px-4 py-3 text-[10px] font-bold text-slate-800 uppercase uppercase">${r.tgl}</td>
+                    <td class="px-4 py-3 text-center font-black uppercase uppercase">${r.kelas}</td>
+                    <td class="px-4 py-3 cursor-pointer group" onclick="contactMentorWA('${r.wa}', '${r.nama_sekolah}')">
+                        <div class="font-black text-slate-900 group-hover:text-indigo-600 transition-colors uppercase truncate max-w-[120px]" title="${r.guru}">${r.guru}</div>
+                        <div class="text-indigo-500 font-bold text-[9px] flex items-center gap-1">
                             <svg class="w-2.5 h-2.5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
                             ${r.wa}
-                        </a>
+                        </div>
                     </td>
-                    <td class="px-4 py-3 text-center">
-                        <div class="flex items-center justify-center gap-1.5">
-                            <button onclick="downloadPDFFromAdmin('${r.id}')" class="p-1.5 bg-emerald-50 text-emerald-600 rounded hover:bg-emerald-600 hover:text-white transition-all shadow-sm" title="Unduh PDF Bukti Pendaftaran">
+                    <td class="px-4 py-3 text-center uppercase">
+                        <div class="flex items-center justify-center gap-1.5 uppercase">
+                            <button onclick="downloadPDFFromAdmin('${r.id}')" class="p-1.5 bg-emerald-50 text-emerald-600 rounded hover:bg-emerald-600 hover:text-white transition-all shadow-sm uppercase" title="UNDUH PDF BUKTI PENDAFTARAN">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" /></svg>
                             </button>
-                            <button onclick="resetRevisionToken('${r.id}')" class="p-1.5 bg-amber-50 text-amber-600 rounded hover:bg-amber-600 hover:text-white transition-all shadow-sm" title="Reset Token Keamanan">
+                            <button onclick="resetRevisionToken('${r.id}')" class="p-1.5 bg-amber-50 text-amber-600 rounded hover:bg-amber-600 hover:text-white transition-all shadow-sm uppercase" title="RESET TOKEN KEAMANAN">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" /></svg>
                             </button>
-                            <button onclick="editEntry('${r.id}')" class="p-1.5 bg-indigo-50 text-indigo-600 rounded hover:bg-indigo-600 hover:text-white transition-all shadow-sm">
+                            <button onclick="editEntry('${r.id}')" class="p-1.5 bg-indigo-50 text-indigo-600 rounded hover:bg-indigo-600 hover:text-white transition-all shadow-sm uppercase">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" /></svg>
                             </button>
-                            <button onclick="deleteEntry('${r.id}')" class="p-1.5 bg-rose-50 text-rose-600 rounded hover:bg-rose-600 hover:text-white transition-all shadow-sm">
+                            <button onclick="deleteEntry('${r.id}')" class="p-1.5 bg-rose-50 text-rose-600 rounded hover:bg-rose-600 hover:text-white transition-all shadow-sm uppercase">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" /></svg>
                             </button>
                         </div>
@@ -937,22 +939,31 @@
         }
 
         window.exportToExcel = function() {
-            if (!window.submissions || window.submissions.length === 0) { showModal("DATA KOSONG", "Tidak ada data untuk diunduh.", "error"); return; }
+            if (!window.submissions || window.submissions.length === 0) { showModal("DATA KOSONG", "TIDAK ADA DATA UNTUK DIUNDUH.", "error"); return; }
             const wb = XLSX.utils.book_new();
             const overallData = [];
             window.submissions.forEach(sub => {
-                const undian = MAP_UNDIAN[sub.nama_sekolah] || 0;
+                const schoolNameRaw = (sub.nama_sekolah || "").toUpperCase();
+                const undian = MAP_UNDIAN[schoolNameRaw] || 0;
                 Object.keys(LOMBA_MAP).forEach(key => {
                     if (sub[`${key}_nama_1`]) {
                         for(let i=1; i<=LOMBA_MAP[key].count; i++) {
                             const pName = sub[`${key}_nama_${i}`];
                             if (!pName && i > 1) continue;
                             overallData.push({
-                                "Waktu": sub.waktu_simpan, "Sekolah": sub.nama_sekolah, "No. Undian": undian, "Token": sub.revision_token || '', "Lomba": LOMBA_MAP[key].name,
-                                "Nama Peserta": pName || '', "NISN": sub[`${key}_nisn_${i}`] || '',
-                                "JK": sub[`${key}_jk_${i}`] || '', "Tempat": sub[`${key}_tempat_${i}`] || '',
-                                "Tgl": sub[`${key}_tgl_${i}`] || '', "Kelas": sub[`${key}_kelas_${i}`] || '',
-                                "Pembimbing": sub[`${key}_guru_nama`] || '', "WA": sub[`${key}_guru_wa`] || ''
+                                "WAKTU": sub.waktu_simpan, 
+                                "SEKOLAH": schoolNameRaw, 
+                                "NO. UNDIAN": undian, 
+                                "TOKEN": sub.revision_token || '', 
+                                "LOMBA": LOMBA_MAP[key].name,
+                                "NAMA PESERTA": (pName || '').toUpperCase(), 
+                                "NISN": sub[`${key}_nisn_${i}`] || '',
+                                "JK": sub[`${key}_jk_${i}`] || '', 
+                                "TEMPAT": (sub[`${key}_tempat_${i}`] || '').toUpperCase(),
+                                "TGL": sub[`${key}_tgl_${i}`] || '', 
+                                "KELAS": sub[`${key}_kelas_${i}`] || '',
+                                "PEMBIMBING": (sub[`${key}_guru_nama`] || '').toUpperCase(), 
+                                "WA": sub[`${key}_guru_wa`] || ''
                             });
                         }
                     }
@@ -963,23 +974,30 @@
             Object.entries(LOMBA_MAP).forEach(([key, info]) => {
                 const categoryData = [];
                 window.submissions.forEach(sub => {
-                    const undian = MAP_UNDIAN[sub.nama_sekolah] || 0;
+                    const schoolNameRaw = (sub.nama_sekolah || "").toUpperCase();
+                    const undian = MAP_UNDIAN[schoolNameRaw] || 0;
                     if (sub[`${key}_nama_1`]) {
                         for(let i=1; i<=info.count; i++) {
                             const pName = sub[`${key}_nama_${i}`];
                             if (!pName && i > 1) continue;
                             categoryData.push({
-                                "No. Undian": undian, "Sekolah": sub.nama_sekolah, "Nama Peserta": pName || '',
-                                "NISN": sub[`${key}_nisn_${i}`] || '', "JK": sub[`${key}_jk_${i}`] || '',
-                                "Tempat": sub[`${key}_tempat_${i}`] || '', "Tgl": sub[`${key}_tgl_${i}`] || '',
-                                "Kelas": sub[`${key}_kelas_${i}`] || '', "Pembimbing": sub[`${key}_guru_nama`] || '', "WA": sub[`${key}_guru_wa`] || ''
+                                "NO. UNDIAN": undian, 
+                                "SEKOLAH": schoolNameRaw, 
+                                "NAMA PESERTA": (pName || '').toUpperCase(),
+                                "NISN": sub[`${key}_nisn_${i}`] || '', 
+                                "JK": sub[`${key}_jk_${i}`] || '',
+                                "TEMPAT": (sub[`${key}_tempat_${i}`] || '').toUpperCase(), 
+                                "TGL": sub[`${key}_tgl_${i}`] || '',
+                                "KELAS": sub[`${key}_kelas_${i}`] || '', 
+                                "PEMBIMBING": (sub[`${key}_guru_nama`] || '').toUpperCase(), 
+                                "WA": sub[`${key}_guru_wa`] || ''
                             });
                         }
                     }
                 });
                 if (categoryData.length > 0) {
-                    categoryData.sort((a,b) => a["No. Undian"] - b["No. Undian"]);
-                    XLSX.utils.book_append_sheet(wb, XLSX.utils.json_to_sheet(categoryData), info.name.substring(0, 31));
+                    categoryData.sort((a,b) => a["NO. UNDIAN"] - b["NO. UNDIAN"]);
+                    XLSX.utils.book_append_sheet(wb, XLSX.utils.json_to_sheet(categoryData), info.name.substring(0, 31).toUpperCase());
                 }
             });
             const now = new Date();
@@ -987,9 +1005,10 @@
             const MM = String(now.getMonth() + 1).padStart(2, '0');
             const DD = String(now.getDate()).padStart(2, '0');
             const HH = String(now.getHours()).padStart(2, '0');
+            const mm = String(now.getMinutes()).padStart(2, '0');
             const SS = String(now.getSeconds()).padStart(2, '0');
-            const timestamp = `${YYYY}${MM}${DD} ${HH}.${SS}`;
-            XLSX.writeFile(wb, `Edi Brata Data Pendaftaran FLS3N ${timestamp}.xlsx`);
+            const timestamp = `${YYYY}${MM}${DD} ${HH}.${mm}.${SS}`;
+            XLSX.writeFile(wb, `EDI BRATA DATA PENDAFTARAN FLS3N ${timestamp}.xlsx`);
         }
 
         function switchTab(tabId) {
@@ -1016,7 +1035,15 @@
 
         function captureCurrentFormData() {
             const form = document.getElementById('multiStepForm');
-            if (form) Object.assign(tempFormData, Object.fromEntries(new FormData(form).entries()));
+            if (form) {
+                const raw = Object.fromEntries(new FormData(form).entries());
+                for (let key in raw) {
+                    if (typeof raw[key] === 'string' && key !== 'revision_token' && !key.includes('tgl') && !key.includes('jk') && !key.includes('kelas') && !key.includes('nisn') && !key.includes('wa')) {
+                        raw[key] = raw[key].toUpperCase();
+                    }
+                }
+                Object.assign(tempFormData, raw);
+            }
         }
 
         function moveStep(delta) {
@@ -1024,7 +1051,7 @@
             if (currentStep === 1 && delta === 1) {
                 const school = document.getElementById('main_sekolah').value;
                 const checks = document.querySelectorAll('input[name="lomba_pilihan"]:checked');
-                if (!school || checks.length === 0) { showModal("DATA BELUM LENGKAP", "Pilih nama sekolah dan tandai minimal satu lomba.", "error"); return; }
+                if (!school || checks.length === 0) { showModal("DATA BELUM LENGKAP", "PILIH NAMA SEKOLAH DAN TANDAI MINIMAL SATU LOMBA.", "error"); return; }
                 selectedLomba = Array.from(checks).map(c => c.value);
                 generateParticipantForms(); 
             }
@@ -1035,7 +1062,7 @@
                     const inputs = el.querySelectorAll('input[required], select[required]');
                     let valid = true;
                     inputs.forEach(i => { if(!i.value) { i.classList.add('border-rose-400', 'bg-rose-50'); valid = false; } else i.classList.remove('border-rose-400', 'bg-rose-50'); });
-                    if (!valid) { showModal("BELUM LENGKAP", "Lengkapi semua data bertanda merah.", "error"); return; }
+                    if (!valid) { showModal("BELUM LENGKAP", "LENGKAPI SEMUA DATA BERTANDA MERAH.", "error"); return; }
                 }
             }
             if (currentStep + delta > total) { submitForm(); return; }
@@ -1048,7 +1075,7 @@
         }
 
         async function submitForm() {
-            if (new Date() > DEADLINE_DATE) { showModal("PENDAFTARAN DITUTUP", "Waktu pendaftaran berakhir.", "error"); return; }
+            if (new Date() > DEADLINE_DATE) { showModal("PENDAFTARAN DITUTUP", "WAKTU PENDAFTARAN BERAKHIR.", "error"); return; }
             captureCurrentFormData();
             const waktuSimpan = new Date().toLocaleString('id-ID'); 
             tempFormData.waktu_simpan = waktuSimpan;
@@ -1058,11 +1085,9 @@
                 const isRevisionFlag = !!editingDocId; 
                 
                 if (editingDocId) {
-                    // Update data (Keep the same token if it exists)
                     if (!tempFormData.revision_token) tempFormData.revision_token = generateToken();
                     await window.firestoreTools.updateDoc(window.firestoreTools.doc(window.db, 'artifacts', window.customAppId, 'public', 'data', 'pendaftar', editingDocId), tempFormData);
                 } else {
-                    // New registration: Generate new token
                     tempFormData.revision_token = generateToken();
                     const docRef = await window.firestoreTools.addDoc(window.firestoreTools.collection(window.db, 'artifacts', window.customAppId, 'public', 'data', 'pendaftar'), tempFormData);
                     docId = docRef.id;
@@ -1070,7 +1095,7 @@
                 
                 generateRegistrationPDF(tempFormData, docId, isRevisionFlag);
                 
-                showModal("BERHASIL", `Pendaftaran berhasil ${isRevisionFlag ? 'diperbarui' : 'disimpan'}. Bukti PDF akan diunduh otomatis.`, "success");
+                showModal("BERHASIL", `PENDAFTARAN BERHASIL ${isRevisionFlag ? 'DIPERBARUI' : 'DISIMPAN'}. BUKTI PDF AKAN DIUNDUH OTOMATIS.`, "success");
                 
                 document.getElementById('multiStepForm').reset();
                 tempFormData = {}; currentStep = 1; selectedLomba = []; editingDocId = null;
@@ -1081,23 +1106,24 @@
                 document.getElementById('prevBtn').style.visibility = 'hidden';
                 document.getElementById('nextBtn').innerText = 'SELANJUTNYA';
                 switchRevisionMode(false); switchTab('beranda');
-            } catch (e) { showModal("GAGAL", "Terjadi kesalahan koneksi: " + e.message, "error"); }
+            } catch (e) { showModal("GAGAL", "TERJADI KESALAHAN KONEKSI: " + e.message, "error"); }
         }
 
         function generateRegistrationPDF(data, regId, isRevision) {
             const { jsPDF } = window.jspdf;
             const doc = new jsPDF();
-            const schoolName = data.nama_sekolah || "-";
+            const schoolName = (data.nama_sekolah || "-").toUpperCase();
             const lotteryNum = MAP_UNDIAN[schoolName] || "-";
-            const token = data.revision_token || "-";
+            const token = (data.revision_token || "-").toUpperCase();
             
             const now = new Date();
             const YYYY = now.getFullYear();
             const MM = String(now.getMonth() + 1).padStart(2, '0');
             const DD = String(now.getDate()).padStart(2, '0');
             const HH = String(now.getHours()).padStart(2, '0');
+            const mm = String(now.getMinutes()).padStart(2, '0');
             const SS = String(now.getSeconds()).padStart(2, '0');
-            const timestamp = `${YYYY}${MM}${DD} ${HH}.${SS}`;
+            const timestamp = `${YYYY}${MM}${DD} ${HH}.${mm}.${SS}`;
 
             const titleText = isRevision ? "BUKTI REVISI PENDAFTARAN FLS3N 2026" : "KARTU BUKTI PENDAFTARAN FLS3N 2026";
             doc.setFontSize(18);
@@ -1115,14 +1141,44 @@
             
             doc.setFontSize(12);
             doc.setTextColor(0);
-            doc.text("IDENTITAS PENDAFTAR", 20, 42);
             
+            // Grid Alignment for Identity (Colon fixed at X=60)
             doc.setFontSize(10);
-            doc.text(`Nama Sekolah    : ${schoolName}`, 20, 50);
-            doc.text(`Nomor Undian    : ${lotteryNum}`, 20, 56);
-            doc.text(`Waktu Simpan    : ${data.waktu_simpan}`, 20, 62);
-            doc.text(`ID Registrasi   : ${regId}`, 20, 68);
-            doc.text(`KODE TOKEN REVISI : ${token}`, 20, 74);
+            let yIdentitas = 45; 
+            const lineSpacing = 6;
+            const labels = [
+                ["Nama Sekolah", schoolName],
+                ["Waktu Simpan", data.waktu_simpan],
+                ["Id Registrasi", regId],
+                ["Kode Token Revisi", token]
+            ];
+
+            labels.forEach(item => {
+                doc.setFont("helvetica", "normal");
+                doc.setTextColor(0);
+                doc.text(item[0], 20, yIdentitas);
+                doc.text(":", 60, yIdentitas);
+                doc.setFont("helvetica", "bold");
+                doc.text(String(item[1]), 63, yIdentitas);
+                yIdentitas += lineSpacing;
+            });
+
+            // Lottery Box on Right (Height adjusted to match 4 rows of text)
+            doc.setDrawColor(79, 70, 229);
+            doc.setLineWidth(0.5);
+            doc.rect(150, 40, 40, 28); // Height changed to match 4 lines of text (approx 28pt)
+            
+            doc.setFontSize(8);
+            doc.setTextColor(79, 70, 229);
+            doc.text("NOMOR UNDIAN", 170, 46, { align: "center" });
+            
+            doc.setFontSize(36);
+            doc.setFont("helvetica", "bold");
+            doc.text(String(lotteryNum), 170, 62, { align: "center" });
+            
+            // Reset styles for autoTable
+            doc.setTextColor(0);
+            doc.setFont("helvetica", "normal");
             
             const tableRows = [];
             Object.keys(LOMBA_MAP).forEach(key => {
@@ -1133,10 +1189,10 @@
                         tableRows.push([
                             tableRows.length + 1,
                             LOMBA_MAP[key].name,
-                            pName || '-',
+                            (pName || '-').toUpperCase(),
                             data[`${key}_nisn_${i}`] || '-',
                             data[`${key}_kelas_${i}`] || '-',
-                            data[`${key}_guru_nama`] || '-'
+                            (data[`${key}_guru_nama`] || '-').toUpperCase()
                         ]);
                     }
                 }
@@ -1153,10 +1209,24 @@
             });
             
             const finalY = doc.lastAutoTable.finalY + 15;
-            doc.setFontSize(9);
-            doc.setFont("helvetica", "italic");
-            doc.text(`Simpan Kode Token Revisi Anda: ${token}`, 105, finalY, { align: "center" });
-            doc.text("Kode ini diperlukan jika Anda ingin mengubah data di kemudian hari.", 105, finalY + 5, { align: "center" });
+            
+            // Baris 1: Bukti Sah (Bold, 9.5pt, Non-Italic)
+            doc.setFontSize(9.5);
+            doc.setTextColor(0);
+            doc.setFont("helvetica", "bold");
+            doc.text("Dokumen ini adalah bukti sah pendaftaran FLS3N Sukaresmi 2026.", 105, finalY, { align: "center" });
+            
+            // Baris 2: Metadata (Normal, 8pt, Abu-abu, Rapat)
+            doc.setFontSize(8);
+            doc.setTextColor(80);
+            doc.setFont("helvetica", "normal");
+            doc.text(`Simpan Token Revisi Anda untuk merubah data di kemudian hari. Dicetak otomatis pada ${timestamp}`, 105, finalY + 4.5, { align: "center" });
+            
+            // Branding Pengembang (Tengah Bawah)
+            doc.setFontSize(7);
+            doc.setTextColor(180); // Light grey
+            doc.setFont("helvetica", "normal");
+            doc.text("DEVELOPED BY EDI BRATA", 105, 285, { align: "center" });
             
             const prefix = isRevision ? "Edi Brata Bukti Revisi Pendaftaran FLS3N" : "Edi Brata Bukti Pendaftaran FLS3N";
             const fileName = `${prefix} ${schoolName} ${timestamp}.pdf`;
@@ -1173,7 +1243,7 @@
                 document.getElementById('adminLoginArea').classList.add('hidden');
                 document.getElementById('adminPanel').classList.remove('hidden');
                 updateAdminTable();
-            } else showModal("AKSES DITOLAK", "Kata sandi salah.", "error");
+            } else showModal("AKSES DITOLAK", "KATA SANDI SALAH.", "error");
         }
 
         window.adminLogout = function() { 
@@ -1194,7 +1264,6 @@
             ic.innerHTML = type === 'success' ? '✅' : '❌';
             ic.className = `w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-3xl ${type === 'success' ? 'bg-emerald-50 text-emerald-500' : 'bg-rose-50 text-rose-500'}`;
             
-            // Bersihkan aksi sebelumnya kecuali tombol tutup
             actions.innerHTML = "";
             
             if (extraAction) {
@@ -1223,26 +1292,26 @@
                 let partHTML = '';
                 for (let i = 1; i <= lomba.count; i++) {
                     const prefix = `${id}_`;
-                    const vNama = tempFormData[`${prefix}nama_${i}`] || '', vNisn = tempFormData[`${prefix}nisn_${i}`] || '', vJk = tempFormData[`${prefix}jk_${i}`] || '', vTempat = tempFormData[`${prefix}tempat_${i}`] || '', vTgl = tempFormData[`${prefix}tgl_${i}`] || '', vKelas = tempFormData[`${prefix}kelas_${i}`] || '';
+                    const vNama = (tempFormData[`${prefix}nama_${i}`] || '').toUpperCase(), vNisn = tempFormData[`${prefix}nisn_${i}`] || '', vJk = tempFormData[`${prefix}jk_${i}`] || '', vTempat = (tempFormData[`${prefix}tempat_${i}`] || '').toUpperCase(), vTgl = tempFormData[`${prefix}tgl_${i}`] || '', vKelas = tempFormData[`${prefix}kelas_${i}`] || '';
                     partHTML += `
                         <div class="bg-white p-6 md:p-8 rounded border border-slate-200 relative overflow-hidden shadow-sm text-slate-800 text-left">
                             <div class="absolute top-0 left-0 w-1 gradient-bg h-full"></div>
                             <h4 class="font-bold text-indigo-700 mb-6 flex items-center gap-3 text-sm uppercase">
-                                <span class="bg-indigo-700 text-white w-7 h-7 rounded flex items-center justify-center text-[10px] font-bold shadow-sm">${i}</span> Identitas Peserta ${lomba.count > 1 ? i : ''}
+                                <span class="bg-indigo-700 text-white w-7 h-7 rounded flex items-center justify-center text-[10px] font-bold shadow-sm">${i}</span> IDENTITAS PESERTA ${lomba.count > 1 ? i : ''}
                             </h4>
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6 text-left">
-                                <div class="md:col-span-2"><label class="block text-[10px] font-bold uppercase text-slate-400 mb-1">Nama Lengkap</label><input type="text" name="${prefix}nama_${i}" value="${vNama}" required class="w-full px-4 py-3 rounded border border-slate-200 bg-slate-50 focus:bg-white focus:border-indigo-500 outline-none text-sm font-semibold uppercase" placeholder="CONTOH: AHMAD SUBARJO"></div>
+                                <div class="md:col-span-2"><label class="block text-[10px] font-bold uppercase text-slate-400 mb-1">NAMA LENGKAP</label><input type="text" name="${prefix}nama_${i}" value="${vNama}" required class="w-full px-4 py-3 rounded border border-slate-200 bg-slate-50 focus:bg-white focus:border-indigo-500 outline-none text-sm font-semibold uppercase" placeholder="CONTOH: AHMAD SUBARJO"></div>
                                 <div class="md:col-span-1"><label class="block text-[10px] font-bold uppercase text-slate-400 mb-1">NISN</label><input type="text" name="${prefix}nisn_${i}" value="${vNisn}" required maxlength="10" class="w-full px-4 py-3 rounded border border-slate-200 bg-slate-50 focus:bg-white focus:border-indigo-500 outline-none text-sm font-semibold tracking-widest" placeholder="CONTOH: 0123456789"></div>
-                                <div class="md:col-span-1"><label class="block text-[10px] font-bold uppercase text-slate-400 mb-1">Jenis Kelamin</label><select name="${prefix}jk_${i}" required class="w-full px-4 py-3 rounded border border-slate-300 bg-slate-50 focus:bg-white focus:border-indigo-500 outline-none text-sm font-semibold"><option value="">-- Pilih --</option><option value="Laki-Laki" ${vJk==='Laki-Laki'?'selected':''}>Laki-Laki</option><option value="Perempuan" ${vJk==='Perempuan'?'selected':''}>Perempuan</option></select></div>
-                                <div><label class="block text-[10px] font-bold uppercase text-slate-400 mb-1">Tempat Lahir</label><input type="text" name="${prefix}tempat_${i}" value="${vTempat}" required class="w-full px-4 py-3 rounded border border-slate-200 bg-slate-50 focus:bg-white focus:border-indigo-500 outline-none text-sm font-semibold uppercase" placeholder="CONTOH: PANDEGLANG"></div>
-                                <div><label class="block text-[10px] font-bold uppercase text-slate-400 mb-1">Tanggal Lahir</label><input type="date" name="${prefix}tgl_${i}" value="${vTgl}" required class="w-full px-4 py-3 rounded border border-slate-200 bg-slate-50 focus:bg-white focus:border-indigo-500 outline-none text-sm font-semibold"></div>
-                                <div class="md:col-span-1"><label class="block text-[10px] font-bold uppercase text-slate-400 mb-1">Kelas</label><select name="${prefix}kelas_${i}" required class="w-full px-4 py-3 rounded border border-slate-200 bg-slate-50 focus:bg-white focus:border-indigo-500 outline-none text-sm font-semibold"><option value="">-- Pilih --</option><option value="3" ${vKelas==='3'?'selected':''}>Kelas 3</option><option value="4" ${vKelas==='4'?'selected':''}>Kelas 4</option><option value="5" ${vKelas==='5'?'selected':''}>Kelas 5</option></select></div>
+                                <div class="md:col-span-1"><label class="block text-[10px] font-bold uppercase text-slate-400 mb-1">JENIS KELAMIN</label><select name="${prefix}jk_${i}" required class="w-full px-4 py-3 rounded border border-slate-300 bg-slate-50 focus:bg-white focus:border-indigo-500 outline-none text-sm font-semibold"><option value="">-- PILIH --</option><option value="LAKI-LAKI" ${vJk==='LAKI-LAKI'?'selected':''}>LAKI-LAKI</option><option value="PEREMPUAN" ${vJk==='PEREMPUAN'?'selected':''}>PEREMPUAN</option></select></div>
+                                <div><label class="block text-[10px] font-bold uppercase text-slate-400 mb-1">TEMPAT LAHIR</label><input type="text" name="${prefix}tempat_${i}" value="${vTempat}" required class="w-full px-4 py-3 rounded border border-slate-200 bg-slate-50 focus:bg-white focus:border-indigo-500 outline-none text-sm font-semibold uppercase" placeholder="CONTOH: PANDEGLANG"></div>
+                                <div><label class="block text-[10px] font-bold uppercase text-slate-400 mb-1">TANGGAL LAHIR</label><input type="date" name="${prefix}tgl_${i}" value="${vTgl}" required class="w-full px-4 py-3 rounded border border-slate-200 bg-slate-50 focus:bg-white focus:border-indigo-500 outline-none text-sm font-semibold"></div>
+                                <div class="md:col-span-1"><label class="block text-[10px] font-bold uppercase text-slate-400 mb-1">KELAS</label><select name="${prefix}kelas_${i}" required class="w-full px-4 py-3 rounded border border-slate-200 bg-slate-50 focus:bg-white focus:border-indigo-500 outline-none text-sm font-semibold"><option value="">-- PILIH --</option><option value="3" ${vKelas==='3'?'selected':''}>KELAS 3</option><option value="4" ${vKelas==='4'?'selected':''}>KELAS 4</option><option value="5" ${vKelas==='5'?'selected':''}>KELAS 5</option></select></div>
                             </div>
                         </div>
                     `;
                 }
-                const vGuru = tempFormData[`${id}_guru_nama`] || '', vWa = tempFormData[`${id}_guru_wa`] || '';
-                stepDiv.innerHTML = `<div class="border-b border-slate-100 pb-5 mb-8 flex items-center gap-4 text-left"><span class="gradient-bg text-white min-w-[40px] h-10 rounded flex items-center justify-center font-bold text-base shadow-sm">${stepIdx}</span><h2 class="text-xl font-bold uppercase tracking-tight text-slate-900">${lomba.name}</h2></div><div class="space-y-10 text-slate-800">${partHTML}<div class="bg-indigo-50/50 p-6 md:p-10 rounded border-2 border-dashed border-indigo-200 relative text-left"><h4 class="font-bold text-slate-800 text-base mb-6 uppercase">Guru Pendamping</h4><div class="grid grid-cols-1 md:grid-cols-2 gap-8"><div class="md:col-span-2"><label class="block text-[11px] font-bold uppercase text-slate-400 mb-1">Nama & Gelar</label><input type="text" name="${id}_guru_nama" value="${vGuru}" required class="w-full px-4 py-3 rounded border border-indigo-100 shadow-sm outline-none text-sm font-bold uppercase" placeholder="DRA. SITI AMINAH, M.PD."></div><div class="md:col-span-2"><label class="block text-[11px] font-bold uppercase text-slate-400 mb-1">No. WhatsApp</label><input type="tel" name="${id}_guru_wa" value="${vWa}" required class="w-full px-4 py-3 rounded border border-indigo-100 shadow-sm outline-none text-sm font-bold uppercase" placeholder="081234567890"></div></div></div></div>`;
+                const vGuru = (tempFormData[`${id}_guru_nama`] || '').toUpperCase(), vWa = tempFormData[`${id}_guru_wa`] || '';
+                stepDiv.innerHTML = `<div class="border-b border-slate-100 pb-5 mb-8 flex items-center gap-4 text-left"><span class="gradient-bg text-white min-w-[40px] h-10 rounded flex items-center justify-center font-bold text-base shadow-sm">${stepIdx}</span><h2 class="text-xl font-bold uppercase tracking-tight text-slate-900 uppercase">${lomba.name}</h2></div><div class="space-y-10 text-slate-800">${partHTML}<div class="bg-indigo-50/50 p-6 md:p-10 rounded border-2 border-dashed border-indigo-200 relative text-left"><h4 class="font-bold text-slate-800 text-base mb-6 uppercase">GURU PENDAMPING</h4><div class="grid grid-cols-1 md:grid-cols-2 gap-8"><div class="md:col-span-2"><label class="block text-[11px] font-bold uppercase text-slate-400 mb-1">NAMA & GELAR</label><input type="text" name="${id}_guru_nama" value="${vGuru}" required class="w-full px-4 py-3 rounded border border-indigo-100 shadow-sm outline-none text-sm font-bold uppercase" placeholder="DRA. SITI AMINAH, M.PD."></div><div class="md:col-span-2"><label class="block text-[11px] font-bold uppercase text-slate-400 mb-1">NO. WHATSAPP</label><input type="tel" name="${id}_guru_wa" value="${vWa}" required class="w-full px-4 py-3 rounded border border-indigo-100 shadow-sm outline-none text-sm font-bold uppercase" placeholder="081234567890"></div></div></div></div>`;
                 container.appendChild(stepDiv);
             });
             updateStepperUI();
